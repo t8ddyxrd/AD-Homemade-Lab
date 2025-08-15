@@ -68,101 +68,128 @@ nslookup t8ddy.com
 
 ```
 
-## 1️⃣0️⃣ Reverse DNS Lookup Test
+## 🔟 Create Global Security Group for HR
+![Create HR Group] <img width="1005" height="726" alt="Screenshot_20250815_115858" src="https://github.com/user-attachments/assets/22d2de1d-6d2b-45de-a522-d7eb494379da" />
 
-![Reverse nslookup] <img width="997" height="741" alt="Screenshot_20250815_115858" src="GITHUB_LINK" />
-🔍 Performed reverse DNS lookup for IP → hostname resolution.
+📜 Configured:
+- **Group Name:** `GG_HR`
+- **Location:** `t8ddy.com/HR` OU
+- **Group Scope:** Global
+- **Group Type:** Security
+- **Purpose:** Manage access rights for HR resources centrally
 
-## 1️⃣2️⃣ Ping Test – External Host
+## 1️⃣1️⃣ Create New User in IT OU
+![Create IT User] <img width="1005" height="726" alt="Screenshot_20250815_120031" src="https://github.com/user-attachments/assets/a84aace4-b6e3-4a0a-af43-50c60423591b" />
 
-![Ping External] <img width="997" height="741" alt="Screenshot_20250815_120031" src="GITHUB_LINK" />
-🌍 Verified external connectivity by pinging 8.8.8.8.
+📜 Configured:
+- **First Name:** Alex
+- **Last Name:** T
+- **Full Name:** Alex T
+- **User Logon Name:** alext@t8ddy.com
+- **Pre-Windows 2000 Logon Name:** T8DDY\alext
+- **Location:** `t8ddy.com/IT` OU
+- **Purpose:** Create a domain user account for IT department access
 
-## 1️⃣3️⃣ Create Security GPO – Account Lockout
+## 1️⃣2️⃣ Create Global Security Group for IT
+![Create IT Group] <img width="1005" height="726" alt="Screenshot_20250815_121458" src="https://github.com/user-attachments/assets/4fb4da4d-41d7-4a2e-b8c1-46bcac37e691" />
 
-![Security GPO Creation] <img width="1025" height="763" alt="Screenshot_20250815_122247" src="GITHUB_LINK" />
-🛡️ Created Security-Account Lockout GPO to enforce stricter account security.
+📜 Configured:
+- **Group Name:** `GG_IT`
+- **Location:** `t8ddy.com/IT` OU
+- **Group Scope:** Global
+- **Group Type:** Security
+- **Purpose:** Manage access rights for IT department resources centrally
 
-## 1️⃣5️⃣ Configure Account Lockout Duration
+## 1️⃣3️⃣ Create New GPO for Corporate Login Banner
+![Create Corp Login Banner GPO] <img width="1005" height="726" alt="Screenshot_20250815_121114" src="https://github.com/user-attachments/assets/43d7035b-f03f-466a-a047-c80a8d512e6a" />
 
-![Account Lockout Duration] <img width="1025" height="763" alt="Screenshot_20250815_122408" src="GITHUB_LINK" />
-⏳ Set account lockout duration to 30 minutes to protect against brute force attacks.
+📜 Configured:
+- **GPO Name:** `Corp-Login Banner`
+- **Location:** Starter GPOs in `t8ddy.com` domain
+- **Source Starter GPO:** None
+- **Purpose:** Enforce a corporate login banner across domain-joined systems
 
-## 1️⃣6️⃣ Organizational Unit Creation
+## 1️⃣4️⃣ Configure Security Account Lockout and Password Policies via GPO
+![Create Security Account Lockout GPO] <img width="956" height="755" alt="Screenshot_20250815_121941" src="https://github.com/user-attachments/assets/225e3d54-2bec-43ad-9be5-e1af4a872688" />
+![Set Account Lockout Duration] <img width="956" height="755" alt="Screenshot_20250815_122247" src="https://github.com/user-attachments/assets/9ae818bf-b9d3-4ada-8dbb-177e885125c1" />
+![Account Lockout Policy Overview] <img width="956" height="755" alt="Screenshot_20250815_122316" src="https://github.com/user-attachments/assets/aeabf88f-ba04-4c3e-9414-366e011f740d" />
+![Password Policy Settings]<img width="956" height="755" alt="Screenshot_20250815_122408" src="https://github.com/user-attachments/assets/2d6b2f69-a7a0-48dd-8d19-26f0e90e902e" />
 
-![OU Creation] <img width="1024" height="768" alt="Screenshot_20250815_115858" src="screenshots/Screenshot_20250815_115858.png" />
-🏢 Created HR, IT, and Design OUs for structured user and group management.
 
-## 1️⃣7️⃣ User Accounts for Departments
+📜 Configured:
+- **GPO Name:** `Security-Account Lockout`
+- **Location:** Group Policy Objects in `t8ddy.com` domain
+- **Account Lockout Duration:** 30 minutes  
+- **Account Lockout Threshold:** 5 invalid logon attempts  
+- **Allow Administrator Account Lockout:** Enabled  
+- **Reset Lockout Counter After:** 30 minutes  
+- **Password Complexity:** Enabled  
+- **Minimum Password Length:** 12 characters  
+- **Minimum/Maximum Password Age:** 29 / 30 days  
+- **Password History:** 0 remembered  
+- **Store Passwords Using Reversible Encryption:** Disabled
+- **Purpose:** Protect domain accounts by enforcing strong lockout and password policies
 
-![User Accounts] <img width="1024" height="768" alt="Screenshot_20250815_120031" src="screenshots/Screenshot_20250815_120031.png" />
-👤 Added 25+ users across HR, IT, and Design using PowerShell bulk creation.
-## 1️⃣8️⃣ Group Creation
+## 1️⃣5️⃣ Configure Security Audit for Logon Events via GPO
+![Create Security Audit Logon Events GPO] <img width="956" height="755" alt="Screenshot_20250815_122705" src="https://github.com/user-attachments/assets/efdb0efb-1b14-4814-8e2f-0737edf76328" />
+![Audit Policy Settings] <img width="956" height="755" alt="Screenshot_20250815_122846" src="https://github.com/user-attachments/assets/6a5f8fc9-f621-40df-ba63-d83523d2d246" />
 
-![Group Creation] <img width="1024" height="768" alt="Screenshot_20250815_120134" src="screenshots/Screenshot_20250815_120134.png" />
-👥 Created departmental security groups for access control and policy assignment.
-## 1️⃣9️⃣ Corp Login Banner GPO
+📜 Configured:
+- **GPO Name:** `Security-Audit Logon Events`
+- **Location:** Group Policy Objects in `t8ddy.com` domain
+- **Audit Account Logon Events:** Success, Failure  
+- **Audit Account Management:** Success, Failure  
+- **Audit Directory Service Access:** Success, Failure  
+- **Audit Logon Events:** Success, Failure  
+- **Audit Object Access:** Success, Failure  
+- **Audit Policy Change:** Not Defined  
+- **Audit Privilege Use:** No Auditing  
+- **Audit Process Tracking:** Failure  
+- **Audit System Events:** Success, Failure  
+- **Purpose:** Enable auditing for key account and logon activities to monitor and investigate security-related events
 
-![Login Banner] <img width="1024" height="768" alt="Screenshot_20250815_121458" src="screenshots/Screenshot_20250815_121458.png" />
-⚠️ Configured a legal notice banner via Group Policy to display at login.
-## 2️⃣0️⃣ Account Lockout Policy
+## 1️⃣6️⃣ Configure Drive Mapping for Department Shares via GPO
+![Create Drive Mapping GPO] <img width="956" height="755" alt="Screenshot_20250815_122940" src="https://github.com/user-attachments/assets/30b983ef-a2aa-44ef-b783-e8d658129276" />
+![Drive Mapping Properties - HR Share]<img width="956" height="755" alt="Screenshot_20250815_123054" src="https://github.com/user-attachments/assets/55b98128-2f0c-44f0-871a-a629a7d74176" />
+![Security Group Targeting - GG_HR] <img width="956" height="755" alt="Screenshot_20250815_123135" src="https://github.com/user-attachments/assets/da404576-c444-483c-886e-dce5a837cb0d" />
+![Drive Maps Overview] <img width="956" height="755" alt="Screenshot_20250815_123152" src="https://github.com/user-attachments/assets/40853e22-1671-4641-bb3b-aad84dd6b604" />
 
-![Lockout Policy] <img width="1024" height="768" alt="Screenshot_20250815_121941" src="screenshots/Screenshot_20250815_121941.png" />
-🔐 Set account lockout threshold and reset times for enhanced security.
+📜 Configured:
+- **GPO Name:** `Drive Mapping-Department Shares`
+- **Location:** Group Policy Objects in `t8ddy.com` domain
+- **Drive Mapping Path:** `\\<DC-HOSTNAME>\HR$`
+- **Label:** HR Shared Folder
+- **Drive Letter:** H:
+- **Reconnect:** Disabled
+- **Action:** Update
+- **Security Group Targeting:** Only applies if user is a member of `GG_HR`
+- **Purpose:** Automatically map HR department shared drive to users in the HR group
 
-## 2️⃣1️⃣ Password Policy
+  
+## 1️⃣7️⃣ Configure Local Administrator Group Membership via GPO
+![Create Local Admin Control GPO] <img width="956" height="755" alt="Screenshot_20250815_123213" src="https://github.com/user-attachments/assets/72ac4103-e0ac-4fc1-b8a0-484b5cf6f811" />
+![Administrators Group Properties] <img width="956" height="755" alt="Screenshot_20250815_123309" src="https://github.com/user-attachments/assets/4a8e941d-e3da-4baf-aec1-35a0b87a8ece" />
 
-![Password Policy] <img width="1024" height="768" alt="Screenshot_20250815_122247" src="screenshots/Screenshot_20250815_122247.png" />
-🔑 Configured minimum length, complexity, and expiration requirements for passwords.
+- **GPO Name:** `Security-Local Admin Control`
+- **Location:** Group Policy Objects in `t8ddy.com` domain
+- **Configured Group:** Local Administrators
+- **Members Added:**  
+  - Domain Admins  
+  - GG_IT (IT Security Group)
 
-## 2️⃣2️⃣ Shared Folder Creation
+## 1️⃣8️⃣ Add DNS A Record for Intranet
+![Add Intranet DNS Record] <img width="956" height="755" alt="Screenshot_20250815_123454" src="https://github.com/user-attachments/assets/6cb784d4-a813-4438-b263-b05f56a4c8ce" />
 
-![Shared Folder] <img width="1024" height="768" alt="Screenshot_PLACEHOLDER" src="screenshots/PLACEHOLDER.png" />
-📁 Created departmental shared folders with NTFS permissions for controlled access.
+📜 Configured:
+- **Record Type:** A (Host)
+- **Host Name:** intranet
+- **FQDN:** intranet.t8ddy.com
+- **IP Address:** 172.17.1.2.3
+- **PTR Record Creation:** Disabled
+- **Authenticated Update:** Disabled
+- **Purpose:** Create an internal DNS entry to resolve `intranet.t8ddy.com` to the specified internal IP
 
-## 2️⃣3️⃣ NTFS Permission Configuration
-
-![NTFS Permissions] <img width="1024" height="768" alt="Screenshot_PLACEHOLDER" src="screenshots/PLACEHOLDER.png" />
-🛡️ Set read/write permissions for departmental groups and read-only for others.
-
-## 2️⃣4️⃣ DNS Reverse Lookup Zone
-
-![Reverse Lookup Zone] <img width="1024" height="768" alt="Screenshot_PLACEHOLDER" src="screenshots/PLACEHOLDER.png" />
-🌐 Configured a reverse lookup zone to resolve IP addresses back to hostnames.
-
-## 2️⃣5️⃣ Audit Logon Events Policy
-
-![Audit Logon] <img width="1024" height="768" alt="Screenshot_PLACEHOLDER" src="screenshots/PLACEHOLDER.png" />
-📝 Enabled auditing for logon and logoff events to monitor account activity.
-
-## 2️⃣6️⃣ Firewall Configuration
-
-![Firewall Config] <img width="1024" height="768" alt="Screenshot_PLACEHOLDER" src="screenshots/PLACEHOLDER.png" />
-🛡️ Enabled Windows Defender Firewall rules for inbound/outbound traffic control.
-
-##  2️⃣7️⃣ DHCP Scope Setup
-
-![DHCP Scope] <img width="1024" height="768" alt="Screenshot_PLACEHOLDER" src="screenshots/PLACEHOLDER.png" />
-📡 Configured DHCP scope for dynamic IP assignment in the internal network.
-
-##  2️⃣8️⃣ Final Domain Functional Test
-
-![Domain Test] <img width="1024" height="768" alt="Screenshot_PLACEHOLDER" src="screenshots/PLACEHOLDER.png" />
-✅ Verified user logins, group policies, and network connectivity in the domain.
-
-📊 Summary & Testing
-
-✅ All configurations were applied successfully:
-
-AD DS & DNS working with proper name resolution
-
-User & group policies applying as intended
-
-Security baselines enforced
-
-Shared resources accessible only by authorized users
-📜 Credits
-
-🖊️ Author: t8ddy
-💻 Platform: Windows Server 2019
-📅 Date: August 2025
+## 🏆 Credits
+- **Configuration & Implementation:** t8ddy
+- **Environment:** Windows Server 2019 Standard Evaluation  
+- **Domain:** t8ddy.com
