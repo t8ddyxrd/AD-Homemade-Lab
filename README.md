@@ -64,11 +64,11 @@ Verified **Host-Only** + **NAT** adapters for flexibility.
 ## 9️⃣ DNS Lookup Test
  <img width="997" height="741" alt="Screenshot_20250815_115044" src="https://github.com/user-attachments/assets/8e2b7c71-8de0-48f1-9b63-52a184939ae5" />
 ```powershell
-nslookup t8ddy.com
+
 
 ```
 
-## 1️⃣0️⃣ Reverse DNS Lookup Test
+# 1️⃣0️⃣ Reverse DNS Lookup Test
 
 
 
@@ -355,6 +355,9 @@ nslookup t8ddy.com
 
 
 - **Security Group Targeting:** Only applies if user is a member of `GG_HR`
+
+
+- **Purpose:** Automatically map HR department shared drive to users in the HR group
 
 
 - **Purpose:** Automatically map HR department shared drive to users in the HR group
