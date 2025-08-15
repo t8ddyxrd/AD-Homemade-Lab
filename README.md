@@ -68,128 +68,189 @@ nslookup t8ddy.com
 
 ```
 
-## 🔟 Create Global Security Group for HR
- <img width="1005" height="726" alt="Screenshot_20250815_115858" src="https://github.com/user-attachments/assets/22d2de1d-6d2b-45de-a522-d7eb494379da" />
+🔟 Create Global Security Group for HR
+<img width="1005" height="726" alt="Screenshot_20250815_115858" src="https://github.com/user-attachments/assets/22d2de1d-6d2b-45de-a522-d7eb494379da" />
 
 📜 Configured:
-- **Group Name:** `GG_HR`
-- **Location:** `t8ddy.com/HR` OU
-- **Group Scope:** Global
-- **Group Type:** Security
-- **Purpose:** Manage access rights for HR resources centrally
 
-## 1️⃣1️⃣ Create New User in IT OU
- <img width="1005" height="726" alt="Screenshot_20250815_120031" src="https://github.com/user-attachments/assets/a84aace4-b6e3-4a0a-af43-50c60423591b" />
+Group Name: GG_HR
 
-📜 Configured:
-- **First Name:** Alex
-- **Last Name:** T
-- **Full Name:** Alex T
-- **User Logon Name:** alext@t8ddy.com
-- **Pre-Windows 2000 Logon Name:** T8DDY\alext
-- **Location:** `t8ddy.com/IT` OU
-- **Purpose:** Create a domain user account for IT department access
+Location: t8ddy.com/HR OU
 
-## 1️⃣2️⃣ Create Global Security Group for IT
- <img width="1005" height="726" alt="Screenshot_20250815_121458" src="https://github.com/user-attachments/assets/4fb4da4d-41d7-4a2e-b8c1-46bcac37e691" />
+Group Scope: Global
+
+Group Type: Security
+
+Purpose: Manage access rights for HR resources centrally
+
+1️⃣1️⃣ Create New User in IT OU
+<img width="1005" height="726" alt="Screenshot_20250815_120031" src="https://github.com/user-attachments/assets/a84aace4-b6e3-4a0a-af43-50c60423591b" />
 
 📜 Configured:
-- **Group Name:** `GG_IT`
-- **Location:** `t8ddy.com/IT` OU
-- **Group Scope:** Global
-- **Group Type:** Security
-- **Purpose:** Manage access rights for IT department resources centrally
 
-## 1️⃣3️⃣ Create New GPO for Corporate Login Banner
+First Name: Alex
+
+Last Name: T
+
+Full Name: Alex T
+
+User Logon Name: alext@t8ddy.com
+
+Pre-Windows 2000 Logon Name: T8DDY\alext
+
+Location: t8ddy.com/IT OU
+
+Purpose: Create a domain user account for IT department access
+
+1️⃣2️⃣ Create Global Security Group for IT
+<img width="1005" height="726" alt="Screenshot_20250815_121458" src="https://github.com/user-attachments/assets/4fb4da4d-41d7-4a2e-b8c1-46bcac37e691" />
+
+📜 Configured:
+
+Group Name: GG_IT
+
+Location: t8ddy.com/IT OU
+
+Group Scope: Global
+
+Group Type: Security
+
+Purpose: Manage access rights for IT department resources centrally
+1️⃣3️⃣ Create New GPO for Corporate Login Banner
 <img width="1005" height="726" alt="Screenshot_20250815_121114" src="https://github.com/user-attachments/assets/43d7035b-f03f-466a-a047-c80a8d512e6a" />
 
 📜 Configured:
-- **GPO Name:** `Corp-Login Banner`
-- **Location:** Starter GPOs in `t8ddy.com` domain
-- **Source Starter GPO:** None
-- **Purpose:** Enforce a corporate login banner across domain-joined systems
 
-## 1️⃣4️⃣ Configure Security Account Lockout and Password Policies via GPO
-<img width="956" height="755" alt="Screenshot_20250815_121941" src="https://github.com/user-attachments/assets/225e3d54-2bec-43ad-9be5-e1af4a872688" />
-<img width="956" height="755" alt="Screenshot_20250815_122247" src="https://github.com/user-attachments/assets/9ae818bf-b9d3-4ada-8dbb-177e885125c1" />
-<img width="956" height="755" alt="Screenshot_20250815_122316" src="https://github.com/user-attachments/assets/aeabf88f-ba04-4c3e-9414-366e011f740d" />
-img width="956" height="755" alt="Screenshot_20250815_122408" src="https://github.com/user-attachments/assets/2d6b2f69-a7a0-48dd-8d19-26f0e90e902e" />
+GPO Name: Corp-Login Banner
 
+Location: Starter GPOs in t8ddy.com domain
 
-📜 Configured:
-- **GPO Name:** `Security-Account Lockout`
-- **Location:** Group Policy Objects in `t8ddy.com` domain
-- **Account Lockout Duration:** 30 minutes  
-- **Account Lockout Threshold:** 5 invalid logon attempts  
-- **Allow Administrator Account Lockout:** Enabled  
-- **Reset Lockout Counter After:** 30 minutes  
-- **Password Complexity:** Enabled  
-- **Minimum Password Length:** 12 characters  
-- **Minimum/Maximum Password Age:** 29 / 30 days  
-- **Password History:** 0 remembered  
-- **Store Passwords Using Reversible Encryption:** Disabled
-- **Purpose:** Protect domain accounts by enforcing strong lockout and password policies
+Source Starter GPO: None
 
-## 1️⃣5️⃣ Configure Security Audit for Logon Events via GPO
-  <img width="956" height="755" alt="Screenshot_20250815_122705" src="https://github.com/user-attachments/assets/efdb0efb-1b14-4814-8e2f-0737edf76328" />
- <img width="956" height="755" alt="Screenshot_20250815_122846" src="https://github.com/user-attachments/assets/6a5f8fc9-f621-40df-ba63-d83523d2d246" />
+Purpose: Enforce a corporate login banner across domain-joined systems
+
+1️⃣4️⃣ Configure Security Account Lockout and Password Policies via GPO
+<img width="956" height="755" alt="Screenshot_20250815_121941" src="https://github.com/user-attachments/assets/225e3d54-2bec-43ad-9be5-e1af4a872688" /> <img width="956" height="755" alt="Screenshot_20250815_122247" src="https://github.com/user-attachments/assets/9ae818bf-b9d3-4ada-8dbb-177e885125c1" /> <img width="956" height="755" alt="Screenshot_20250815_122316" src="https://github.com/user-attachments/assets/aeabf88f-ba04-4c3e-9414-366e011f740d" /> <img width="956" height="755" alt="Screenshot_20250815_122408" src="https://github.com/user-attachments/assets/2d6b2f69-a7a0-48dd-8d19-26f0e90e902e" />
 
 📜 Configured:
-- **GPO Name:** `Security-Audit Logon Events`
-- **Location:** Group Policy Objects in `t8ddy.com` domain
-- **Audit Account Logon Events:** Success, Failure  
-- **Audit Account Management:** Success, Failure  
-- **Audit Directory Service Access:** Success, Failure  
-- **Audit Logon Events:** Success, Failure  
-- **Audit Object Access:** Success, Failure  
-- **Audit Policy Change:** Not Defined  
-- **Audit Privilege Use:** No Auditing  
-- **Audit Process Tracking:** Failure  
-- **Audit System Events:** Success, Failure  
-- **Purpose:** Enable auditing for key account and logon activities to monitor and investigate security-related events
 
-## 1️⃣6️⃣ Configure Drive Mapping for Department Shares via GPO
- <img width="956" height="755" alt="Screenshot_20250815_122940" src="https://github.com/user-attachments/assets/30b983ef-a2aa-44ef-b783-e8d658129276" />
-<img width="956" height="755" alt="Screenshot_20250815_123054" src="https://github.com/user-attachments/assets/55b98128-2f0c-44f0-871a-a629a7d74176" />
-<img width="956" height="755" alt="Screenshot_20250815_123135" src="https://github.com/user-attachments/assets/da404576-c444-483c-886e-dce5a837cb0d" />
- <img width="956" height="755" alt="Screenshot_20250815_123152" src="https://github.com/user-attachments/assets/40853e22-1671-4641-bb3b-aad84dd6b604" />
+GPO Name: Security-Account Lockout
+
+Location: Group Policy Objects in t8ddy.com domain
+
+Account Lockout Duration: 30 minutes
+
+Account Lockout Threshold: 5 invalid logon attempts
+
+Allow Administrator Account Lockout: Enabled
+
+Reset Lockout Counter After: 30 minutes
+
+Password Complexity: Enabled
+
+Minimum Password Length: 12 characters
+
+Minimum/Maximum Password Age: 29 / 30 days
+
+Password History: 0 remembered
+
+Store Passwords Using Reversible Encryption: Disabled
+
+Purpose: Protect domain accounts by enforcing strong lockout and password policies
+1️⃣5️⃣ Configure Security Audit for Logon Events via GPO
+<img width="956" height="755" alt="Screenshot_20250815_122705" src="https://github.com/user-attachments/assets/efdb0efb-1b14-4814-8e2f-0737edf76328" /> <img width="956" height="755" alt="Screenshot_20250815_122846" src="https://github.com/user-attachments/assets/6a5f8fc9-f621-40df-ba63-d83523d2d246" />
 
 📜 Configured:
-- **GPO Name:** `Drive Mapping-Department Shares`
-- **Location:** Group Policy Objects in `t8ddy.com` domain
-- **Drive Mapping Path:** `\\<DC-HOSTNAME>\HR$`
-- **Label:** HR Shared Folder
-- **Drive Letter:** H:
-- **Reconnect:** Disabled
-- **Action:** Update
-- **Security Group Targeting:** Only applies if user is a member of `GG_HR`
-- **Purpose:** Automatically map HR department shared drive to users in the HR group
 
+GPO Name: Security-Audit Logon Events
+
+Location: Group Policy Objects in t8ddy.com domain
+
+Audit Account Logon Events: Success, Failure
+
+Audit Account Management: Success, Failure
+
+Audit Directory Service Access: Success, Failure
+
+Audit Logon Events: Success, Failure
+
+Audit Object Access: Success, Failure
+
+Audit Policy Change: Not Defined
+
+Audit Privilege Use: No Auditing
+
+Audit Process Tracking: Failure
+
+Audit System Events: Success, Failure
+
+Purpose: Enable auditing for key account and logon activities to monitor and investigate security-related events
+
+1️⃣6️⃣ Configure Drive Mapping for Department Shares via GPO
+<img width="956" height="755" alt="Screenshot_20250815_122940" src="https://github.com/user-attachments/assets/30b983ef-a2aa-44ef-b783-e8d658129276" /> <img width="956" height="755" alt="Screenshot_20250815_123054" src="https://github.com/user-attachments/assets/55b98128-2f0c-44f0-871a-a629a7d74176" /> <img width="956" height="755" alt="Screenshot_20250815_123135" src="https://github.com/user-attachments/assets/da404576-c444-483c-886e-dce5a837cb0d" /> <img width="956" height="755" alt="Screenshot_20250815_123152" src="https://github.com/user-attachments/assets/40853e22-1671-4641-bb3b-aad84dd6b604" />
+
+📜 Configured:
+
+GPO Name: Drive Mapping-Department Shares
+
+Location: Group Policy Objects in t8ddy.com domain
+
+Drive Mapping Path: \\<DC-HOSTNAME>\HR$
+
+Label: HR Shared Folder
+
+Drive Letter: H:
+
+Reconnect: Disabled
+
+Action: Update
+
+Security Group Targeting: Only applies if user is a member of GG_HR
+
+Purpose: Automatically map HR department shared drive to users in the HR group
   
-## 1️⃣7️⃣ Configure Local Administrator Group Membership via GPO
- <img width="956" height="755" alt="Screenshot_20250815_123213" src="https://github.com/user-attachments/assets/72ac4103-e0ac-4fc1-b8a0-484b5cf6f811" />
- <img width="956" height="755" alt="Screenshot_20250815_123309" src="https://github.com/user-attachments/assets/4a8e941d-e3da-4baf-aec1-35a0b87a8ece" />
-
-- **GPO Name:** `Security-Local Admin Control`
-- **Location:** Group Policy Objects in `t8ddy.com` domain
-- **Configured Group:** Local Administrators
-- **Members Added:**  
-  - Domain Admins  
-  - GG_IT (IT Security Group)
-
-## 1️⃣8️⃣ Add DNS A Record for Intranet
- <img width="956" height="755" alt="Screenshot_20250815_123454" src="https://github.com/user-attachments/assets/6cb784d4-a813-4438-b263-b05f56a4c8ce" />
+1️⃣7️⃣ Configure Local Administrator Group Membership via GPO
+<img width="956" height="755" alt="Screenshot_20250815_123213" src="https://github.com/user-attachments/assets/72ac4103-e0ac-4fc1-b8a0-484b5cf6f811" /> <img width="956" height="755" alt="Screenshot_20250815_123309" src="https://github.com/user-attachments/assets/4a8e941d-e3da-4baf-aec1-35a0b87a8ece" />
 
 📜 Configured:
-- **Record Type:** A (Host)
-- **Host Name:** intranet
-- **FQDN:** intranet.t8ddy.com
-- **IP Address:** 172.17.1.2.3
-- **PTR Record Creation:** Disabled
-- **Authenticated Update:** Disabled
-- **Purpose:** Create an internal DNS entry to resolve `intranet.t8ddy.com` to the specified internal IP
 
-## 🏆 Credits
-- **Configuration & Implementation:** t8ddy
-- **Environment:** Windows Server 2019 Standard Evaluation  
-- **Domain:** t8ddy.com
+GPO Name: Security-Local Admin Control
+
+Location: Group Policy Objects in t8ddy.com domain
+
+Configured Group: Local Administrators
+
+Members Added:
+
+Domain Admins
+
+GG_IT (IT Security Group)
+
+Purpose: Ensure only authorized domain admins and IT group members have local administrator rights on domain-joined machines
+
+1️⃣8️⃣ Add DNS A Record for Intranet
+<img width="956" height="755" alt="Screenshot_20250815_123454" src="https://github.com/user-attachments/assets/6cb784d4-a813-4438-b263-b05f56a4c8ce" />
+
+📜 Configured:
+
+Record Type: A (Host)
+
+Host Name: intranet
+
+FQDN: intranet.t8ddy.com
+
+IP Address: 172.17.1.2.3
+
+PTR Record Creation: Disabled
+
+Authenticated Update: Disabled
+
+Purpose: Create an internal DNS entry to resolve intranet.t8ddy.com to the specified internal IP
+
+🏆 Credits
+
+Configuration & Implementation: t8ddy
+
+Environment: Windows Server 2019 Standard Evaluation
+
+Domain: t8ddy.com
