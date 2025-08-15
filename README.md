@@ -66,7 +66,6 @@ Verified **Host-Only** + **NAT** adapters for flexibility.
 ```powershell
 
 
-```
 
 # 1️⃣0️⃣ Reverse DNS Lookup Test
 
