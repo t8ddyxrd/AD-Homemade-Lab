@@ -66,6 +66,103 @@ Verified **Host-Only** + **NAT** adapters for flexibility.
 ```powershell
 nslookup t8ddy.com
 
+```
 
+## 1️⃣0️⃣ Reverse DNS Lookup Test
 
+![Reverse nslookup] <img width="997" height="741" alt="Screenshot_20250815_115858" src="GITHUB_LINK" />
+🔍 Performed reverse DNS lookup for IP → hostname resolution.
 
+## 1️⃣2️⃣ Ping Test – External Host
+
+![Ping External] <img width="997" height="741" alt="Screenshot_20250815_120031" src="GITHUB_LINK" />
+🌍 Verified external connectivity by pinging 8.8.8.8.
+
+## 1️⃣3️⃣ Create Security GPO – Account Lockout
+
+![Security GPO Creation] <img width="1025" height="763" alt="Screenshot_20250815_122247" src="GITHUB_LINK" />
+🛡️ Created Security-Account Lockout GPO to enforce stricter account security.
+
+## 1️⃣5️⃣ Configure Account Lockout Duration
+
+![Account Lockout Duration] <img width="1025" height="763" alt="Screenshot_20250815_122408" src="GITHUB_LINK" />
+⏳ Set account lockout duration to 30 minutes to protect against brute force attacks.
+
+## 1️⃣6️⃣ Organizational Unit Creation
+
+![OU Creation] <img width="1024" height="768" alt="Screenshot_20250815_115858" src="screenshots/Screenshot_20250815_115858.png" />
+🏢 Created HR, IT, and Design OUs for structured user and group management.
+
+## 1️⃣7️⃣ User Accounts for Departments
+
+![User Accounts] <img width="1024" height="768" alt="Screenshot_20250815_120031" src="screenshots/Screenshot_20250815_120031.png" />
+👤 Added 25+ users across HR, IT, and Design using PowerShell bulk creation.
+## 1️⃣8️⃣ Group Creation
+
+![Group Creation] <img width="1024" height="768" alt="Screenshot_20250815_120134" src="screenshots/Screenshot_20250815_120134.png" />
+👥 Created departmental security groups for access control and policy assignment.
+## 1️⃣9️⃣ Corp Login Banner GPO
+
+![Login Banner] <img width="1024" height="768" alt="Screenshot_20250815_121458" src="screenshots/Screenshot_20250815_121458.png" />
+⚠️ Configured a legal notice banner via Group Policy to display at login.
+## 2️⃣0️⃣ Account Lockout Policy
+
+![Lockout Policy] <img width="1024" height="768" alt="Screenshot_20250815_121941" src="screenshots/Screenshot_20250815_121941.png" />
+🔐 Set account lockout threshold and reset times for enhanced security.
+
+## 2️⃣1️⃣ Password Policy
+
+![Password Policy] <img width="1024" height="768" alt="Screenshot_20250815_122247" src="screenshots/Screenshot_20250815_122247.png" />
+🔑 Configured minimum length, complexity, and expiration requirements for passwords.
+
+## 2️⃣2️⃣ Shared Folder Creation
+
+![Shared Folder] <img width="1024" height="768" alt="Screenshot_PLACEHOLDER" src="screenshots/PLACEHOLDER.png" />
+📁 Created departmental shared folders with NTFS permissions for controlled access.
+
+## 2️⃣3️⃣ NTFS Permission Configuration
+
+![NTFS Permissions] <img width="1024" height="768" alt="Screenshot_PLACEHOLDER" src="screenshots/PLACEHOLDER.png" />
+🛡️ Set read/write permissions for departmental groups and read-only for others.
+
+## 2️⃣4️⃣ DNS Reverse Lookup Zone
+
+![Reverse Lookup Zone] <img width="1024" height="768" alt="Screenshot_PLACEHOLDER" src="screenshots/PLACEHOLDER.png" />
+🌐 Configured a reverse lookup zone to resolve IP addresses back to hostnames.
+
+## 2️⃣5️⃣ Audit Logon Events Policy
+
+![Audit Logon] <img width="1024" height="768" alt="Screenshot_PLACEHOLDER" src="screenshots/PLACEHOLDER.png" />
+📝 Enabled auditing for logon and logoff events to monitor account activity.
+
+## 2️⃣6️⃣ Firewall Configuration
+
+![Firewall Config] <img width="1024" height="768" alt="Screenshot_PLACEHOLDER" src="screenshots/PLACEHOLDER.png" />
+🛡️ Enabled Windows Defender Firewall rules for inbound/outbound traffic control.
+
+##  2️⃣7️⃣ DHCP Scope Setup
+
+![DHCP Scope] <img width="1024" height="768" alt="Screenshot_PLACEHOLDER" src="screenshots/PLACEHOLDER.png" />
+📡 Configured DHCP scope for dynamic IP assignment in the internal network.
+
+##  2️⃣8️⃣ Final Domain Functional Test
+
+![Domain Test] <img width="1024" height="768" alt="Screenshot_PLACEHOLDER" src="screenshots/PLACEHOLDER.png" />
+✅ Verified user logins, group policies, and network connectivity in the domain.
+
+📊 Summary & Testing
+
+✅ All configurations were applied successfully:
+
+AD DS & DNS working with proper name resolution
+
+User & group policies applying as intended
+
+Security baselines enforced
+
+Shared resources accessible only by authorized users
+📜 Credits
+
+🖊️ Author: t8ddy
+💻 Platform: Windows Server 2019
+📅 Date: August 2025
