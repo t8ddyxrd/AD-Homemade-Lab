@@ -67,10 +67,6 @@ Verified **Host-Only** + **NAT** adapters for flexibility.
 
 
 
-# 1️⃣0️⃣ Reverse DNS Lookup Test
-
-
-
 ## 🔟 Create Global Security Group for HR
 
 
